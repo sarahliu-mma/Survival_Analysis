@@ -1,4 +1,4 @@
-# Survival Analysis
+# Survival Analysis: Prediction the probability of a wildfire reaching evacuation zones within 12,24,48, and 72 hours
 This project was inspired by the WiDS Global Datathon 2026, a hackathon hosted on Kaggle. More information can be found at: https://www.kaggle.com/competitions/WiDSWorldWide_GlobalDathon26/overview 
 
 Since the complete details are already available on the Kaggle website, this document focuses on explaining the rationale, goals, and code logic for each step. 
@@ -8,6 +8,9 @@ Since the complete details are already available on the Kaggle website, this doc
 Predict the probability of a wildfire reaching within 5 km of the evacuation zones of centroid within 12, 24, 48, and 72 hours. 
 
 ## Process
+
+Before we begin our analysis, let's make sure we've already installed 'lifelong' module for conducting survival analysis
+
 ### Step 1: EDA & Understanding the Data 
   The major goal of this section is to address the following questions: 
   1. What is the censoring rate? 
