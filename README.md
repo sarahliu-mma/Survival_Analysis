@@ -116,3 +116,19 @@ The curve shows that at least 80% of wildfires had not reached a zone within the
 ### Final Submission
 
 Survival functions were predicted for all test zones and converted into the four required probability columns (`prob_12h`, `prob_24h`, `prob_48h`, `prob_72h`).
+
+---
+
+## Limitations
+
+- **Small sample size:** With only 221 training rows and ~51 events, the model has limited statistical power. Coefficient estimates are unstable, and assumption tests (e.g., Schoenfeld residuals) should be interpreted cautiously.
+- **Proportional hazards assumption:** The Cox model requires hazard ratios to remain constant over time. While checks looked reasonable, this assumption is difficult to validate reliably on a dataset this small.
+- **Single model:** The current pipeline relies solely on Cox PH, which is a linear model. It may not capture non-linear relationships or complex feature interactions present in the data.
+
+---
+
+## Future Work
+
+- **Random Survival Forest (RSF):** RSF makes no proportional hazards assumption and naturally handles non-linear relationships and feature interactions. It is a strong candidate to replace or complement the Cox baseline.
+- **XGBoost/LightGBM with Cox objective:** Gradient boosted models with a Cox loss function can capture complex patterns while remaining computationally efficient on small datasets.
+- **Ensembling:** Averaging risk scores from Cox PH, RSF, and a boosted survival model could reduce variance and improve generalization.
