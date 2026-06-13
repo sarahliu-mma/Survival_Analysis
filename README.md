@@ -103,7 +103,10 @@ The curve shows that at least 80% of wildfires had not reached a zone within the
 #### Coefficient Interpretation
 
 - `dist_min_ci_0_5h` had a small p-value, indicating a statistically significant coefficient
-- `cross_track_component` had a confidence interval crossing zero, suggesting its coefficient may not be reliably estimated
+- `cross_track_component` had a confidence interval that does not cross zero, suggesting its coefficient is statistically significant
+- From the coefficient forest plot:
+  - Positive coefficients → increasesd hazard → zone got hit sooner/ Negative coefficients → decreased hazard → zone survived longer/ Coefficients near zero → features had almost no effect
+  - `logdist_std_ci_0_5h`, `closing_speed_m_per_h`, and `radial_growth_rate_m_per_h` appeared to have squares further from center than others. They were likely to be most informative features even if not statistically significant due to sample size.
 
 #### Validation Performance
 
